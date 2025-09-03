@@ -15,11 +15,11 @@ Click the button below to fork the repository and get your own copy:
 
 [![FORK REPO](https://img.shields.io/badge/FORK%20REPO-Click%20Here-007ACC?style=for-the-badge&logo=github)](https://github.com/INCONNU-BOY/INCONNU-XD-V2/fork)
 
-
 ---
-## ⚙️ GET YOUR SESSION
+## ⚙️ GET YOUR SESSION 
 
-[![PAIR CODE](https://img.shields.io/badge/GET%20SESSION_ID-Generate%20Now-4CAF50?style=for-the-badge&logo=whatsapp)](https://inconnu-boy-tech-web.onrender.com)
+[![PAIR CODE](https://img.shields.io/badge/GET%20SESSION_ID-Generate%20Now-3F51B5?style=for-the-badge&logo=whatsapp)](https://inconnu-tech-web-session-id.onrender.com/)
+
 
 ---
 ## ⌛ WHATSAPP CHANNEL SUPPORT 
@@ -103,12 +103,9 @@ on:
   pull_request:
     branches:
       - main
-  schedule:
-    - cron: '0 */6 * * *'  
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     strategy:
@@ -116,27 +113,19 @@ jobs:
         node-version: [20.x]
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
 
-    - name: Install dependencies
-      run: npm install
+      - name: Install dependencies
+        run: npm install
 
-    - name: Install FFmpeg
-      run: sudo apt-get install -y ffmpeg
-
-    - name: Start application with timeout
-      run: |
-        timeout 21590s npm start  # Limite l'exécution à 5h 59m 50s
-
-    - name: Save state (Optional)
-      run: |
-        ./save_state.sh
+      - name: Start application
+        run: npm start
 ```
 
 ## ❤️ Credits
